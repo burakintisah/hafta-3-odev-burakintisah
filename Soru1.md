@@ -1,4 +1,4 @@
-´´´
+``` SQL
 --- using temp array
 WITH TEMP AS (
 SELECT name, 
@@ -14,4 +14,4 @@ ON carr.id = man.id
 SELECT name, car_id, car_model, manufacture_year, 
 ARRAY (SELECT AS STRUCT p.id, timestamp_add(date,interval 3 hour) AS date FROM unnest(purchase) AS p) AS purchase 
 FROM TEMP
-´´´
+```
